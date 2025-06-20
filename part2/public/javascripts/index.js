@@ -13,7 +13,7 @@ function loginSubmit(){
 
             if (user.role === 'owner'){
                 window.location.href = "/owner-dashboard.html";
-            } else if (this.user.role === 'walker'){
+            } else if (user.role === 'walker'){
                 window.location.href = "/walker-dashboard.html";
             }
         }
@@ -23,5 +23,5 @@ function loginSubmit(){
 
     xhttp.setRequestHeader("Content-type", "application/json");
 
-    xhttp.send(JSON.stringify({ uname: user, pwd: pass }));
+    xhttp.send(JSON.stringify({ uname: uname, pwd: pwd }));
 }
