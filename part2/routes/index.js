@@ -18,7 +18,7 @@ router.post('/login', async (req, res) => {
     }
 
     // assign session variables
-    req.session.user = req.body.uname;
+    req.session.user = rows[0];
     req.session.role = rows[0].role;
 
     res.json({ message: 'Login successful', user: rows[0] });
