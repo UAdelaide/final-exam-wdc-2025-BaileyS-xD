@@ -13,5 +13,8 @@ const { createApp, ref } = Vue
                     this.source = data.message;
                 });
             }
+        },
+        mounted() {
+            this.fetchDog();
         }
     }).mount('#app');
