@@ -206,4 +206,5 @@ button.logout {
     background-color: rgba(0,0,0,0);
     color: red;
     height: 50px;
+    padding: 5px ;
 }
