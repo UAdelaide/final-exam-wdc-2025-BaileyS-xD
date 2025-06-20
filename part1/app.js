@@ -61,6 +61,9 @@ let db;
     ((SELECT dog_id FROM Dogs WHERE name = 'Bobby'), '2025-06-12 09:30:00', '60', 'Semaphore', 'open'),
     ((SELECT dog_id FROM Dogs WHERE name = 'Bucky'), '2025-06-10 09:30:00', '45', 'Grange', 'accepted');`);
     */
+
+    // insert ratings
+    await db.execute(`INSERT INTO WalkRequests `);
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
