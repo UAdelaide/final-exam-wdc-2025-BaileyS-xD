@@ -3,9 +3,9 @@ const { createApp, ref } = Vue
         data() {
             return {
                 source: ''
-            }
+            };
         }
-    }).mount('#app')
+    }).mount('#app');
 
 function fetchDog(){
     fetch('https://dog.ceo/api/breeds/image/random')
