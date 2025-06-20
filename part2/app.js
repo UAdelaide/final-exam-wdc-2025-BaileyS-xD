@@ -6,7 +6,6 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-var mysql = require('mysql2/promise');
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
