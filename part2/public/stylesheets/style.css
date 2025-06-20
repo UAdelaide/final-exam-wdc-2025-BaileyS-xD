@@ -191,6 +191,6 @@ button.login {
     height: auto;
 }
 
-button:hover {
+button.login:hover {
     background-color: rgb(0, 120, 230);
 }
