@@ -58,7 +58,10 @@
         async function getCurrentUser() {
           try {
             const res = await fetch('/api/users/me');
-            
+            dogs.value = await res.json();
+          } catch (err) {
+            error.value = 'Failed to load dog requests';
+          }
           }
         }
 
