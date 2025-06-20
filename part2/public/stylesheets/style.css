@@ -155,3 +155,17 @@ section {
     display: none;
 }
 
+.loginform {
+    text-align: left;
+    padding: 15px;
+    display: grid;
+  }
+
+input.userinput {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
