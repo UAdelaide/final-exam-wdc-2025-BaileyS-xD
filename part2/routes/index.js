@@ -46,7 +46,7 @@ router.get('/api/dogs', async (req, res) => {
       return res.send();
     }
 
-    res.json({dogs: rows[0] });
+    res.json({ dogs: rows[0] });
   } catch (error) {
     res.status(500).json({ error: 'Failed to get Dogs' });
   }
