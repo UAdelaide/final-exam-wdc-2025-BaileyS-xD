@@ -72,6 +72,7 @@ let db;
 
     // insert ratings
     //await db.execute(`INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES (6, 2, 1, 3, 'yep'), (7, 2, 3, 5, 'yep2') `);
+    await db.execute(`INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES (6, 2, 1, 3, 'yep'), (7, 2, 3, 5, 'yep2') `);
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
