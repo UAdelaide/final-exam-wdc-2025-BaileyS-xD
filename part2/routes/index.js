@@ -51,7 +51,7 @@ router.get('/api/dogs', async (req, res) => {
   }
 });
 
-router.get('/api/dogs', async (req, res) => {
+router.get('/api/all-dogs', async (req, res) => {
   try {
   const [dogs] = await db.execute('SELECT dog_id, name, size, owner_id FROM Dogs;');
   res.json(dogs);
