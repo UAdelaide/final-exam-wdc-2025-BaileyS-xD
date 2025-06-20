@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
@@ -16,7 +17,7 @@ let db;
     const connection = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: '' // Set your MySQL root password
+      password: ''
     });
 
     // Create the database if it doesn't exist
