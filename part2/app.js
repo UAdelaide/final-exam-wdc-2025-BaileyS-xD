@@ -17,7 +17,7 @@ const { stringify } = require('querystring');
 // setup pool to connect to mySQL server
 var dbConnectionPool = mysql.createPool({
     host: 'localhost',
-    database: 'DogWalkingService'
+    database: 'DogWalkService'
 });
 
 var app = express();
