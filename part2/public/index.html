@@ -62,7 +62,7 @@
     const { createApp, ref, onMounted } = Vue;
     createApp({
       setup() {
-        var dogs = ref([]);
+        const dogs = ref([]);
 
         async function getDogs() {
           try {
@@ -72,18 +72,7 @@
             error.value = 'Failed to load dog requests';
           }
 
-          for (dog of dogs.value) {
-            const res = await fetch('https://dog.ceo/api/breeds/image/random');
-            const source = await res.json();
-            console.log(source.message);
-            console.log(dog);
-            dog.image = source.message;
-            console.log(dog.image);
-          }
-        }
-
-        async function getPictures(){
-          for (dog of dogs.value) {
+          for (const dog of dogs.value) {
             const res = await fetch('https://dog.ceo/api/breeds/image/random');
             const source = await res.json();
             console.log(source.message);
@@ -95,7 +84,6 @@
 
         onMounted(() => {
           getDogs();
-          getPictures();
         });
 
         return {
