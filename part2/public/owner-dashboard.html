@@ -30,7 +30,7 @@
             <label class="form-label">Select Your Dog</label>
             <select id="dog-select" class="form-control" required>
               <option value="" disabled selected>-- Choose a dog --</option>
-              <option v-for="dog in dogs" :key="dog_id" :value="dog_id">
+              <option v-for="dog in dogs" :key="dog.dog_id" :value="dog.dog_id">
                 {{ dog.name }}
               </option>
             </select>
