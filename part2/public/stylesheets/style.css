@@ -94,6 +94,7 @@ button {
     padding: 0.6em;
     margin: 0 0.2em;
     color: white;
+    width: auto;
 }
 
 button:hover {
