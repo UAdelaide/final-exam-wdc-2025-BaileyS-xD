@@ -6,6 +6,7 @@ var router = express.Router();
 router.post('/login', async (req, res) => {
   const { uname, pwd } = req.body;
 
+  // make query
   try {
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
@@ -16,6 +17,7 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
+    // assign session variables
     req.session.user = req.body.uname;
     req.session.role = rows[0].role;
 
