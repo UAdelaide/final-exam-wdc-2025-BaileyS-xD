@@ -74,7 +74,7 @@
         }
 
         async function getPictures(){
-          for (const dog of dogs) {
+          for (const dog of dogs.value) {
             const res = await fetch('https://dog.ceo/api/breeds/image/random');
             const source = await res.json();
             console.log(source.message);
