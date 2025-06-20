@@ -67,8 +67,8 @@ let db;
     ((SELECT wr.request_id FROM WalkRequests wr JOIN WalkApplications wa ON wr.request_id = wa.request_id JOIN Users uw ON wa.walker_id = uw.user_id JOIN Dogs d ON wr.dog_id = d.dog_id JOIN Users uo ON d.owner_id = uo.user_id
     WHERE uw.username = 'bobwalker' AND uo.username = 'alice123' AND wa.status = 'accepted' AND wr.status = 'completed' LIMIT 1),
     (SELECT user_id FROM Users WHERE username = 'bobwalker'),
-    (SELECT user_id FROM Users WHERE username = 'alice123'),5, 'Fantastic job!'
-);`);
+    (SELECT user_id FROM Users WHERE username = 'alice123'), 5, 'Fantastic job!');`
+    );
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
