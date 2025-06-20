@@ -59,8 +59,12 @@ let db;
     ((SELECT dog_id FROM Dogs WHERE name = 'Bella'), '2025-06-10 09:30:00', '45', 'Beachside Ave', 'accepted'),
     ((SELECT dog_id FROM Dogs WHERE name = 'Benji'), '2025-06-11 10:30:00', '25', 'Adelaide', 'open'),
     ((SELECT dog_id FROM Dogs WHERE name = 'Bobby'), '2025-06-12 09:30:00', '60', 'Semaphore', 'open'),
-    ((SELECT dog_id FROM Dogs WHERE name = 'Bucky'), '2025-06-10 09:30:00', '45', 'Grange', 'accepted'),`);
+    ((SELECT dog_id FROM Dogs WHERE name = 'Bucky'), '2025-06-10 09:30:00', '45', 'Grange', 'accepted');`);
     */
+    await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) VALUES
+    ((SELECT dog_id FROM Dogs WHERE name = 'Max'), '2025-06-10 08:00:00', '30', 'Parklands', 'open'),`
+    );
+
 
     // insert ratings
     await db.execute(`INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES
