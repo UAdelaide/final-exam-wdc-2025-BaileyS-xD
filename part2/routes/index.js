@@ -1,5 +1,7 @@
 var express = require('express');
+var path = require('path');
 var router = express.Router();
+
 // login to account
 router.post('/login', function(req, res, next) {
     // connect to db
