@@ -1,3 +1,3 @@
 function fetchDog(){
-    fetch
+    fetch('')
 }
