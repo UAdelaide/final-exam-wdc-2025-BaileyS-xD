@@ -9,7 +9,7 @@ router.post('/login', function(req, res, next) {
       return;
       }
 
-      var query = "SELECT COUNT(*) FROM Users WHERE username = ? && password = SHA(?)";
+      var query = "SELECT COUNT(*) FROM Users WHERE username = ? && password_hash = ?";
 
       connection.query(query, [req.body.uname, req.body.pwd], function(err2, rows, fields) {
         connection.release();
