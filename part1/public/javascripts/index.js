@@ -1,0 +1,3 @@
+function fetchDog(){
+    fetch
+}
