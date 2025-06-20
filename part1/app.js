@@ -63,7 +63,7 @@ let db;
     */
 
     // insert ratings
-    await db.execute(`INSERT INTO WalkRequests `);
+    await db.execute(`INSERT INTO WalkRatings `);
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
