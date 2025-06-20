@@ -27,6 +27,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
+// logout
 router.post('/login', async (req, res) => {
   const { uname, pwd } = req.body;
 
