@@ -1,9 +1,9 @@
 const { createApp, ref } = Vue
     createApp({
         setup() {
-        const message = ref('Hello vue!')
+        const source;
         return {
-            fetchDog()
+            source = fetchDog()
         }
         }
     }).mount('#app')
