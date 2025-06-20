@@ -4,6 +4,8 @@ const path = require('path');
 require('dotenv').config();
 var mysql = require('mysql2/promise');
 
+var indexRouter = require('./routes/index');
+
 const app = express();
 
 // Middleware
