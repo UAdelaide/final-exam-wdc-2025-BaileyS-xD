@@ -78,6 +78,7 @@
             const res = await fetch('https://dog.ceo/api/breeds/image/random');
             const source = await res.json();
             console.log(source.message);
+            console.log(dog);
             dog.image = source.message;
             console.log(dog.image);
           }
