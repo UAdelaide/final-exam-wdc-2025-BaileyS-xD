@@ -23,7 +23,7 @@ router.post('/login', function(req, res, next) {
             if (rows[0].role == 'owner'){
                 res.send('owner');
             } else {
-                res.send
+                res.send('walker');
             }
           } else {
             res.send("incorrect");
