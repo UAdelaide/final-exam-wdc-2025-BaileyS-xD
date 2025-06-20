@@ -4,7 +4,6 @@ const path = require('path');
 require('dotenv').config();
 var mysql = require('mysql2/promise');
 
-var indexRouter = require('./routes/index');
 
 const app = express();
 
@@ -33,9 +32,11 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
+const indexRouter = require('./routes/index');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
+app.use('/', indexRouter);
 
 // Export the app instead of listening here
 module.exports = app;
