@@ -10,13 +10,10 @@ function loginSubmit(){
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200){
             const user = JSON.parse(this.responseText).user;
-            console.log(user)
             if (user.role == 'owner'){
                 window.location.href = "/owner-dashboard.html";
             } else if (user.role == 'walker'){
                 window.location.href = "/walker-dashboard.html";
-            } else {
-                console.log('test');
             }
         }
     };
