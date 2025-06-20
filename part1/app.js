@@ -86,6 +86,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
     }
 });
 
+// route to return a summary of walkers with their ratings
 app.get('/api/walkrequests/open', async (req, res) => {
     try {
         const [open] = await db.execute(`SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username FROM WalkRequests wr INNER JOIN Dogs d ON wr.dog_id = d.dog_id INNER JOIN Users u ON d.owner_id = u.user_id WHERE wr.status = 'open';`);
