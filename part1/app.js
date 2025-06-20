@@ -63,7 +63,7 @@ let db;
     */
 
     await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-09 08:00:00', 30, 'Parklands', 'completed' FROM Dogs WHERE name = 'Max';`);
-    await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-09 08:00:00', 30, 'Parklands', 'completed' FROM Dogs WHERE name = 'Max';`);
+    await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-09 08:00:00', 30, 'Parklands', 'completed' FROM Dogs WHERE name = 'Bella';`);
 
 
     // insert ratings
