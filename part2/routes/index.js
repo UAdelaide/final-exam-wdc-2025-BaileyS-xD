@@ -4,13 +4,13 @@ var router = express.Router();
 
 // login to account
 router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
+    const { uname, pwd } = req.body;
 
     try {
-      const [rows] = await db.query(`
+      const [rows] = await req.pool.query(`
         SELECT user_id, username, role FROM Users
         WHERE username = ? AND password_hash = ?
-      `, [email, password]);
+      `, [uname, pwd]);
 
       if (rows.length === 0) {
         return res.status(401).json({ error: 'Invalid credentials' });
