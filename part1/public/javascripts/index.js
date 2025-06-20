@@ -1,6 +1,10 @@
 const { createApp, ref } = Vue
     createApp({
-        
+        data() {
+            return {
+                source: ''
+            }
+        }
     }).mount('#app')
 
 function fetchDog(){
