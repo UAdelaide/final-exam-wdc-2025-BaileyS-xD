@@ -174,3 +174,7 @@ div.login {
     margin: auto;
     width: 480px;
 }
+
+label {
+    font-style: bold;
+}
