@@ -3,35 +3,23 @@ const db = require('../models/db');
 var router = express.Router();
 
 // login to account
-router.post('/login', function(req, res, next) {
-  // connect to db
-  req.pool.getConnection(function(err, connection) {
-      if (err) {
-      res.sendStatus(500);
-      return;
-      }
+router.post('/login', async (req, res) => {
+  const { email, password } = req.body;
 
-      var query = "SELECT username, role FROM Users WHERE username = ? && password_hash = ?";
+  try {
+    const [rows] = await db.query(`
+      SELECT user_id, username, role FROM Users
+      WHERE email = ? AND password_hash = ?
+    `, [email, password]);
 
-      connection.query(query, [req.body.uname, req.body.pwd], function(err2, rows, fields) {
-        connection.release();
-          if (err2) {
-              res.sendStatus(500);
-              return;
-          }
+    if (rows.length === 0) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
 
-          if (rows[0]){
-            req.session.user = req.body.uname;
-            if (rows[0].role == 'owner'){
-                res.send('owner');
-            } else {
-                res.send('walker');
-            }
-          } else {
-            res.send("incorrect");
-          }
-      });
-  });
+    res.json({ message: 'Login successful', user: rows[0] });
+  } catch (error) {
+    res.status(500).json({ error: 'Login failed' });
+  }
 });
 
 module.exports = router;
