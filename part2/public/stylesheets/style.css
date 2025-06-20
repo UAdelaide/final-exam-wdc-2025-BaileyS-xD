@@ -196,7 +196,7 @@ button.login:hover {
 }
 
 div.header {
-    position: relative;
+    display: flex;
 }
 
 button.logout {
