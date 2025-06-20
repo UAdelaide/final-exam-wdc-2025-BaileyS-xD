@@ -43,12 +43,8 @@ router.get('/api/dogs', async (req, res) => {
     `, [req.session.user]);
 
     if (rows.length === 0) {
-      return res.status(401).json({ error: 'Invalid credentials' });
+      return res.send();
     }
-
-    // assign session variables
-    req.session.user = req.body.uname;
-    req.session.role = rows[0].role;
 
     res.json({ message: 'Login successful', user: rows[0] });
   } catch (error) {
