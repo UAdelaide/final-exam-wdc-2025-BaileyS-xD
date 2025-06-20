@@ -9,7 +9,7 @@ router.post('/login', function(req, res, next) {
       return;
       }
 
-      var query = "SELECT username,  FROM Users WHERE username = ? && password_hash = ?";
+      var query = "SELECT username, role FROM Users WHERE username = ? && password_hash = ?";
 
       connection.query(query, [req.body.uname, req.body.pwd], function(err2, rows, fields) {
         connection.release();
