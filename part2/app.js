@@ -1,50 +1,19 @@
-/* eslint-disable linebreak-style */
-var express = require('express');
-var session = require('express-session');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const express = require('express');
+const path = require('path');
+require('dotenv').config();
 
-var indexRouter = require('./routes/index');
-var walkRoutes = require('./routes/walkRoutes');
-var userRoutes = require('./routes/userRoutes');
+const app = express();
 
-// require mysql
-var mysql = require('mysql');
-const { connect } = require('http2');
-const { stringify } = require('querystring');
-
-// setup pool to connect to mySQL server
-var dbConnectionPool = mysql.createPool({
-    host: 'localhost',
-    database: 'DogWalkService'
-});
-
-var app = express();
-
-// middleware to access database
-app.use(function(req, res, next) {
-    req.pool = dbConnectionPool;
-    next();
-});
-
-app.use(logger('dev'));
+// Middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(express.static(path.join(__dirname, '/public')));
 
-// sessions
-app.use(session({
-    secret: 'evilwebsite',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false, maxAge: 3600000 } // session expires after 1 hour
-}));
+// Routes
+const walkRoutes = require('./routes/walkRoutes');
+const userRoutes = require('./routes/userRoutes');
 
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
+// Export the app instead of listening here
 module.exports = app;
