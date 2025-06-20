@@ -67,7 +67,8 @@ let db;
 
 
     // insert application
-    await db.execute(`INSERT INTO WalkRequests (request_id, walker_id, applied_at, status) VALUES 6, 2, '2025-06-08 08:00:00';`);
+    await db.execute(`INSERT INTO WalkRequests (request_id, walker_id, applied_at, status) VALUES 6, 2, '2025-06-08 08:00:00', 'accepted';`);
+    await db.execute(`INSERT INTO WalkRequests (request_id, walker_id, applied_at, status) VALUES 7, 2, '2025-06-08 08:00:00', 'accepted';`);
 
     // insert ratings
     //await db.execute(`INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES (6, 2, 1, 3, 'yep'), (7, 2, 3, 5, 'yep2') `);
