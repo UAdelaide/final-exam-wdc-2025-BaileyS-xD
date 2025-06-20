@@ -3,7 +3,7 @@ const { createApp, ref } = Vue
         setup() {
         const message = ref('Hello vue!')
         return {
-            message
+            fetchDog()
         }
         }
     }).mount('#app')
@@ -13,6 +13,6 @@ function fetchDog(){
     .then((response) => response.json())
     .then((data) => {
         const source = data.message;
-        document.getElementById('dog').src = source;
+        return source;
     });
 }
