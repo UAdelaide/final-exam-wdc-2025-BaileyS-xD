@@ -34,7 +34,7 @@ router.post('/logout', function(req, res, next) {
   res.send();
 });
 
-router.get('/api/dogs', async (req, res) => {
+router.get('/api/dog', async (req, res) => {
   // make query
   try {
     const [rows] = await db.query(`
