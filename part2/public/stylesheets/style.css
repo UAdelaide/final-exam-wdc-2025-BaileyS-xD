@@ -201,7 +201,7 @@ div.header {
 
 button.logout {
     margin-left: auto;
-    border: 2px red;
+    border: 2px solid red;
     border-radius: 5px;
     background-color: white;
     color: red;
