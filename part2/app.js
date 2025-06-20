@@ -2,7 +2,7 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config();
-var mysql = require('mysql2/promise');
+var mysql = require('mysql');
 
 var dbConnectionPool = mysql.createPool({
   host: 'localhost',
@@ -13,8 +13,6 @@ const app = express();
 
 // Middleware
 app.use(express.json());
-
-
 
 app.use(function(req, res, next) {
   req.pool = dbConnectionPool;
