@@ -15,7 +15,7 @@ const indexRouter = require('./routes/index');
 
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
-app.use('/')
+app.use('/', indexRouter);
 
 // Export the app instead of listening here
 module.exports = app;
