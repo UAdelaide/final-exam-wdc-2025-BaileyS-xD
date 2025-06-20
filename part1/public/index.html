@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer>
+        const { createApp, ref } = Vue
+
+
         function fetchDog(){
             fetch('https://dog.ceo/api/breeds/image/random')
             .then((response) => response.json())
