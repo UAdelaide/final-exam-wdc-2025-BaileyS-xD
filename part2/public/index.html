@@ -74,7 +74,7 @@
         }
 
         async function getPictures(){
-          for (const dog of dogList) {
+          for (dog in dogs) {
             const imageRes = await fetch(`https://example.com/api/dog-photo/${dog.dog_id}`);
             const imageData = await imageRes.json();
             dog.imageUrl = imageData.imageUrl; // attach imageUrl property
