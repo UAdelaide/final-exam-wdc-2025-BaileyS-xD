@@ -36,7 +36,7 @@ let db;
       password: '',
       database: 'DogWalkService'
     });
-
+/*
     // insert users
     await db.execute(`INSERT INTO Users (username, email, password_hash, role) VALUES
     ('alice123', 'alice@example.com', 'hashed123', 'owner'),
@@ -60,6 +60,7 @@ let db;
     ((SELECT dog_id FROM Dogs WHERE name = 'Benji'), '2025-06-11 10:30:00', '25', 'Adelaide', 'open'),
     ((SELECT dog_id FROM Dogs WHERE name = 'Bobby'), '2025-06-12 09:30:00', '60', 'Semaphore', 'open'),
     ((SELECT dog_id FROM Dogs WHERE name = 'Bucky'), '2025-06-10 09:30:00', '45', 'Grange', 'accepted');`);
+    */
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
