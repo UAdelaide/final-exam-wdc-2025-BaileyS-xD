@@ -15,11 +15,13 @@
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
     <div class="login">
+      <form class="loginform" action="/login" method="POST">
         <label for="uname">Username</label>
         <input id="uname" type="text" placeholder="Enter Username" required>
         <label for="pwd">Password</label>
           <input id="pwd" type="password" placeholder="Enter Password" required>
         <button class="login" type="button" onclick="loginSubmit()">Log in</button>
+      </form>
     </div>
 
   </div>
