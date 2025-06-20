@@ -57,8 +57,7 @@ const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
 const indexRouter = require('./routes/index');
 
-app.use('/api/walks', walkRoutes);
-app.use('/api/users', userRoutes);
+
 app.use('/', indexRouter);
 
 // Export the app instead of listening here
@@ -71,7 +70,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-
+var walkRoutes = require('./routes/walkRoutes');
+var userRoutes = require('./routes/userRoutes');
 
 // require mysql
 var mysql = require('mysql');
@@ -109,6 +109,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/uploads', express.static('uploads'));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/walks', walkRoutes);
+app.use('/api/users', userRoutes);
 
 module.exports = app;
