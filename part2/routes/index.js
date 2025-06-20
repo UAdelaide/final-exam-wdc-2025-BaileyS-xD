@@ -18,9 +18,7 @@ router.post('/login', function(req, res, next) {
               return;
           }
 
-          const count = rows[0]['COUNT(*)'];
-
-          if (count > 0){
+          if (rows[0]){
             req.session.user = req.body.uname;
             res.send("correct");
           } else {
