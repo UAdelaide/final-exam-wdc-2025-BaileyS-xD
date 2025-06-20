@@ -11,12 +11,10 @@ function loginSubmit(){
         if (this.readyState == 4 && this.status == 200){
             if (this.responseText == "correct"){
                 console.log("correct");
-                vueinst.incpwd = false;
-                window.location.href = "/dashboard";
+
+                //window.location.href = "/dashboard";
             } else {
-                console.log("incorrect");
-                vueinst.incpwd = true;
-                grecaptcha.reset();
+
             }
         }
     };
