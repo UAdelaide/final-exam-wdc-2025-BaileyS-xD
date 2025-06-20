@@ -13,3 +13,7 @@ div.right {
   position: relative;
   float: right;
 }
+
+img {
+  margin-left: auto;
+}
