@@ -1,8 +1,7 @@
 body {
   padding: 0px;
   background-color: red;
-  font-family: 'Comic Sans MS';
-  color: blue;
+
 }
 
 a {
@@ -17,4 +16,13 @@ div.right {
 img {
   margin-left: 50%;
   margin-top: 100%
+}
+
+p {
+  font-family: 'Comic Sans MS';
+  color: blue;
+}
+
+h1 {
+  color: pink;
 }
