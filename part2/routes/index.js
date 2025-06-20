@@ -51,4 +51,13 @@ router.get('/api/dog', async (req, res) => {
   }
 });
 
+router.get('/api/dogs', async (req, res) => {
+  try {
+  const [dogs] = await db.execute('SELECT dog_id, name, size, owner_id FROM Dogs;');
+  res.json(dogs);
+  } catch (err) {
+  res.status(500).json({ error: 'Failed to fetch' });
+  }
+});
+
 module.exports = router;
