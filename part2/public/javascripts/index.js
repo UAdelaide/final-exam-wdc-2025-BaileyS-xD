@@ -10,7 +10,7 @@ function loginSubmit(){
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200){
             if (this.user.role == 'owner'){
-                
+                window.location.href = "/owner";
             }
         }
     };
