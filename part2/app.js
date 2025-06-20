@@ -7,7 +7,7 @@ var mysql = require('mysql');
 
 var dbConnectionPool = mysql.createPool({
   host: 'localhost',
-  database: 'forecastfashion'
+  database: 'DogWalkService'
 });
 
 const app = express();
