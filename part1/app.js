@@ -67,7 +67,8 @@ let db;
 
 
     // insert application
-
+    await db.execute(`INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-09 08:00:00', 30, 'Parklands', 'completed' FROM Dogs WHERE name = 'Max';`);
+    
     // insert ratings
     //await db.execute(`INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments) VALUES (6, 2, 1, 3, 'yep'), (7, 2, 3, 5, 'yep2') `);
   } catch (err) {
