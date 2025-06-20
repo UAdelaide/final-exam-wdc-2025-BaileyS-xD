@@ -7,7 +7,7 @@ router.post('/login', async (req, res) => {
     const { uname, pwd } = req.body;
 
     try {
-      const [rows] = await req.pool.query(`
+      const [rows] = await req.pool.execute(`
         SELECT user_id, username, role FROM Users
         WHERE username = ? AND password_hash = ?
       `, [uname, pwd]);
