@@ -66,12 +66,17 @@
 
         async function getDogs() {
           try {
-            const res = await fetch('/api/dogs');
+            const res = await fetch('/api/all-dogs');
             dogs.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load dog requests';
           }
         }
+
+        onMounted(() => {
+          loadWalks();
+          getDogs();
+        });
 
         return {
           dogs,
