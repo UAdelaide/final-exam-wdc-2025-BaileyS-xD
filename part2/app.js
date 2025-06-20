@@ -41,14 +41,14 @@ app.use('/', indexRouter);
 module.exports = app;
 
 var express = require('express');
-var multer = require('multer');
 var session = require('express-session');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var walkRoutes = require('./routes/walkRoutes');
+var userRoutes = require('./routes/userRoutes');
 
 // require mysql
 var mysql = require('mysql');
@@ -85,7 +85,6 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-const walkRoutes = require('./routes/walkRoutes');
-const userRoutes = require('./routes/userRoutes');
+app.use('/users', usersRouter);
 
 module.exports = app;
