@@ -11,18 +11,20 @@
 <body class="bg-light">
 
   <div id="app" class="container py-5">
-    <!-- Login Form-->
+    <!--Login Form-->
     <div class="login">
       <h1 class="mb-4 text-primary">{{ message }}</h1>
       <form class="loginform" action="/login" method="POST">
 
-        <!-- Username Input-->
+        <!--Username Input-->
         <label for="uname">Username</label>
         <input id="uname" class="userinput" type="text" required>
 
-        <!-- Login Form-->
+        <!-- Password Input -->
         <label for="pwd">Password</label>
         <input id="pwd" class="userinput" type="password" required>
+
+        <!-- Login Form-->
         <button type="button" class="login" onclick="loginSubmit()">Log in</button>
       </form>
     </div>
