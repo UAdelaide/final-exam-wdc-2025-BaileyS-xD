@@ -203,6 +203,6 @@ button.logout {
     margin-left: auto;
     border: 2px solid red;
     border-radius: 5px;
-    background-color: none;
+    background-color: rgba(0,0,0,0);
     color: red;
 }
