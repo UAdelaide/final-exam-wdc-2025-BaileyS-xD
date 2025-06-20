@@ -38,8 +38,8 @@ router.get('/api/dogs', async (req, res) => {
   // make query
   try {
     const [rows] = await db.query(`
-      SELECT user_id, username, role FROM Users
-      WHERE username = ? AND password_hash = ?
+      SELECT dog_id, dog_name FROM Dogs
+      WHERE owner_id = ? AND password_hash = ?
     `, [uname, pwd]);
 
     if (rows.length === 0) {
