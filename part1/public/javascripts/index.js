@@ -4,15 +4,15 @@ const { createApp, ref } = Vue
             return {
                 source: ''
             };
+        },
+        methods: {
+            fetchDog(){
+                fetch('https://dog.ceo/api/breeds/image/random')
+                .then((response) => response.json())
+                .then((data) => {
+                    const source = data.message;
+                    return source;
+                });
+            }
         }
-        
     }).mount('#app');
-
-function fetchDog(){
-    fetch('https://dog.ceo/api/breeds/image/random')
-    .then((response) => response.json())
-    .then((data) => {
-        const source = data.message;
-        return source;
-    });
-}
