@@ -1,68 +1,4 @@
 /* eslint-disable linebreak-style */
-const express = require('express');
-const path = require('path');
-var session = require('express-session');
-require('dotenv').config();
-var mysql = require('mysql');
-
-let db;
-
-(async () => {
-  try {
-    // Connect to MySQL without specifying a database
-    const connection = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '' // Set your MySQL root password
-    });
-
-    // Create the database if it doesn't exist
-    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
-    await connection.end();
-
-    // Now connect to the created database
-    db = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'DogWalkService'
-    });
-  } catch (err) {
-    console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
-  }
-})();
-
-const app = express();
-
-// Middleware
-app.use(express.json());
-
-app.use(function(req, res, next) {
-  req.pool = db;
-  next();
-});
-
-// sessions
-app.use(session({
-  secret: 'evilwebsite',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false, maxAge: 3600000 } // session expires after 1 hour
-}));
-
-app.use(express.static(path.join(__dirname, '/public')));
-
-// Routes
-const walkRoutes = require('./routes/walkRoutes');
-const userRoutes = require('./routes/userRoutes');
-const indexRouter = require('./routes/index');
-
-
-app.use('/', indexRouter);
-
-// Export the app instead of listening here
-module.exports = app;
-
 var express = require('express');
 var session = require('express-session');
 var path = require('path');
@@ -81,7 +17,7 @@ const { stringify } = require('querystring');
 // setup pool to connect to mySQL server
 var dbConnectionPool = mysql.createPool({
     host: 'localhost',
-    database: 'forecastfashion'
+    database: 'DogWalkService'
 });
 
 var app = express();
