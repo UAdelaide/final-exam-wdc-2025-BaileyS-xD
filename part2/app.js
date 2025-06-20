@@ -33,8 +33,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Routes
 const indexRouter = require('./routes/index');
 
-app.use('/api/walks', walkRoutes);
-app.use('/api/users', userRoutes);
+
 app.use('/', indexRouter);
 
 // Export the app instead of listening here
@@ -85,6 +84,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/walks', walkRoutes);
+app.use('/api/users', userRoutes);
 
 module.exports = app;
