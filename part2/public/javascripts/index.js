@@ -12,6 +12,8 @@ function loginSubmit(){
             if (this.responseText == "owner"){
                 console.log("owner");
 
+            } else if {
+                
             } else {
                 console.log('false');
             }
