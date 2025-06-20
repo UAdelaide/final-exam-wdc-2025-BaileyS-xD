@@ -169,3 +169,9 @@ input.userinput {
     border-radius: 10px;
     box-sizing: border-box;
 }
+
+div.login {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
