@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 var express = require('express');
 var session = require('express-session');
 var path = require('path');
@@ -47,4 +48,3 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 module.exports = app;
-/* eslint-disable linebreak-style */
