@@ -209,3 +209,7 @@ button.logout {
     width: auto;
     padding: 0 10px;
 }
+
+button.logout:hover {
+    background-color: red;
+}
