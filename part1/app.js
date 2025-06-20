@@ -78,7 +78,7 @@ app.get('/api/dogs', async (req, res) => {
 // route to return open walk requests
 app.get('/api/walkrequests/open', async (req, res) => {
     try {
-        const [dogs] = await db.execute('SELECT wr.request_id, d.dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username FROM WalkRequests wr JOIN Users u ON d.owner_id = u.user_id JOIN;');
+        const [dogs] = await db.execute('SELECT wr.request_id, d.dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username FROM WalkRequests wr JOIN Dogs d ON JOIN Users u ON d.owner_id = u.user_id JOIN;');
         res.json(dogs);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch' });
