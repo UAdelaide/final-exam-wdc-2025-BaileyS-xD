@@ -4,14 +4,16 @@
     <title>Express</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script defer>
-function fetchDog(){
-    fetch('https://dog.ceo/api/breeds/image/random')
-    .then((response) => response.json())
-    .then((data) => {
-        const source = data.message;
-        document.getElementById('dog').src = source;
-    });
-}
+        function fetchDog(){
+            fetch('https://dog.ceo/api/breeds/image/random')
+            .then((response) => response.json())
+            .then((data) => {
+                const source = data.message;
+                document.getElementById('dog').src = source;
+            });
+        }
+
+        
     </script>
 </head>
 
