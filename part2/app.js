@@ -5,10 +5,12 @@ var session = require('express-session');
 require('dotenv').config();
 var mysql = require('mysql');
 
-var dbConnectionPool = mysql.createPool({
-  host: 'localhost',
-  database: 'DogWalkService'
-});
+db = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'DogWalkService'
+    });
 
 const app = express();
 
