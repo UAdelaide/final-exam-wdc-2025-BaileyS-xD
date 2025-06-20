@@ -15,6 +15,11 @@ var dbConnectionPool = mysql.createPool({
   database: 'forecastfashion'
 });
 
+app.use(function(req, res, next) {
+  req.pool = dbConnectionPool;
+  next();
+});
+
 let db;
 
 (async () => {
