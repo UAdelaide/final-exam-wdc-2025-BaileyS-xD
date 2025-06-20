@@ -79,7 +79,7 @@ app.get('/api/dogs', async (req, res) => {
 // route to return open walk requests
 app.get('/api/walkers/summary', async (req, res) => {
     try {
-        const [open] = await db.execute(`SELECT u.username AS walker_username;`);
+        const [open] = await db.execute(`SELECT u.username AS walker_username, ;`);
         res.json(open);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch' });
