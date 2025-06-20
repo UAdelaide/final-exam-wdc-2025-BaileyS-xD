@@ -9,7 +9,8 @@ function loginSubmit(){
 
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200){
-            if (this.user.role === 'owner'){
+            
+            if (this.responseText.role === 'owner'){
                 window.location.href = "/owner-dashboard.html";
             } else if (this.user.role === 'walker'){
                 window.location.href = "/walker-dashboard.html";
