@@ -7,12 +7,9 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 
-<body>
+<body onload="fetchDog()">
     <div id="app">
         <h1>Dog of the day</h1>
-        <div>
-            <button type="button" onclick="fetchDog()">welcome to the program</button>
-        </div>
         <div class="right">
             <img id="dog" @src="source" alt="this could be something">
         </div>
