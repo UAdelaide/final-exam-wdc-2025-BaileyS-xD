@@ -104,6 +104,20 @@
         };
       }
     }).mount('#app');
+
+    async function logout(){
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200){
+            window.location.href = "/";
+        }
+    };
+
+    xhttp.open("POST", "/logout", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
+    }
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
