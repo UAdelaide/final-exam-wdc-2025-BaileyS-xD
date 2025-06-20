@@ -76,8 +76,8 @@
         async function getPictures(){
           for (dog in dogs) {
             const res = await fetch('https://dog.ceo/api/breeds/image/random');
-            dog.image = await res.json();
-            dog.imageUrl = imageData.imageUrl;
+            const source = await res.json();
+            dog.imageUrl = source.message;
           }
         }
 
