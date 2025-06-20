@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
@@ -15,9 +14,7 @@ router.get('/', async (req, res) => {
 
 // POST a new user (simple signup)
 router.post('/register', async (req, res) => {
-  const {
- username, email, password, role
-} = req.body;
+  const { username, email, password, role } = req.body;
 
   try {
     const [result] = await db.query(`
@@ -38,15 +35,15 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
-// POST login
+// POST login (dummy version)
 router.post('/login', async (req, res) => {
-  const { uname, pwd } = req.body;
+  const { email, password } = req.body;
 
   try {
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
-      WHERE username = ? AND password_hash = ?
-    `, [uname, pwd]);
+      WHERE email = ? AND password_hash = ?
+    `, [email, password]);
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
