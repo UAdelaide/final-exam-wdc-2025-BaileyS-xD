@@ -201,5 +201,5 @@ div.header {
 
 button.logout {
     position: absolute;
-    flex: right;
+    right: 0;
 }
