@@ -10,13 +10,6 @@ const app = express();
 // Middleware
 app.use(express.json());
 
-var dbConnectionPool = mysql.createPool({
-  host: 'localhost',
-  database: 'forecastfashion'
-});
-
-
-
 let db;
 
 (async () => {
@@ -43,6 +36,11 @@ let db;
     console.error('Error', err);
   }
 })();
+
+app.use(function(req, res, next) {
+  req.pool = db;
+  next();
+});
 
 
 app.use(express.static(path.join(__dirname, '/public')));
