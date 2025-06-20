@@ -1,4 +1,4 @@
 function fetchDog(){
     fetch('https://dog.ceo/api/breeds/image/random')
-    .then 
+    .then(response => response.json())
 }
