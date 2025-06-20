@@ -39,8 +39,8 @@ router.get('/api/dogs', async (req, res) => {
   try {
     const [rows] = await db.query(`
       SELECT dog_id, dog_name FROM Dogs
-      WHERE owner_id = ? AND password_hash = ?
-    `, [uname, pwd]);
+      WHERE owner_id = ?
+    `, [req.session.uname]);
 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
