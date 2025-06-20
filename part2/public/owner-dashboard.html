@@ -24,10 +24,17 @@
       </div>
       <div class="card-body">
         <form @submit.prevent="submitWalkRequest">
+
+          <!--Select Dog-->
           <div class="mb-3">
             <label class="form-label">Select Your Dog</label>
-            <input v-model="form.dog_id" type="number" class="form-control" required>
+            <select id="dog-select" required>
+              <option value="" disabled selected>-- Choose a dog --</option>
+              <option value="buddy">Buddy</option>
+              <option value="lucy">Lucy</option>
+            </select>
           </div>
+
           <div class="mb-3">
             <label class="form-label">Requested Date & Time</label>
             <input v-model="form.requested_time" type="datetime-local" class="form-control" required>
