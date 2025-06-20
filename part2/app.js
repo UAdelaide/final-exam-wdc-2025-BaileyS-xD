@@ -38,7 +38,7 @@ const app = express();
 app.use(express.json());
 
 app.use(function(req, res, next) {
-  req.pool = dbConnectionPool;
+  req.pool = db;
   next();
 });
 
