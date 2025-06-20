@@ -1,6 +1,8 @@
 body {
   padding: 0px;
   background-color: red;
+  font-family: 'Comic Sans MS';
+  color: blue;
 }
 
 a {
@@ -17,5 +19,6 @@ img {
 }
 
 p {
+  font-family: 'Comic Sans MS';
   color: blue;
 }
