@@ -1,20 +1,33 @@
 var express = require('express');
 var router = express.Router();
+// login to account
+router.post('/login', function(req, res, next) {
+    // connect to db
+    req.pool.getConnection(function(err, connection) {
+        if (err) {
+        res.sendStatus(500);
+        return;
+        }
 
-router.post('/login', async (req, res) => {
-    const { uname, pwd } = req.body;
+        var query = "SELECT COUNT(*) FROM users WHERE username = ? && password = SHA(?)";
 
-    try {
-      const [rows] = await req.pool.execute(`SELECT user_id, username, role FROM Users WHERE username = ? AND password_hash = ?`, [uname, pwd]);
+        connection.query(query, [req.body.uname, req.body.pwd], function(err2, rows, fields) {
+          connection.release();
+            if (err2) {
+                res.sendStatus(500);
+                return;
+            }
 
-      if (rows.length === 0) {
-        return res.status(401).json({ error: 'Invalid credentials' });
-      }
+            const count = rows[0]['COUNT(*)'];
 
-      res.json({ message: 'Login successful', user: rows[0] });
-    } catch (error) {
-      res.status(500).json({ error: 'Login failed' });
-    }
-});
+            if (count > 0){
+              req.session.user = req.body.uname;
+              res.send("correct");
+            } else {
+              res.send("incorrect");
+            }
+        });
+    });
+  });
 
 module.exports = router;
