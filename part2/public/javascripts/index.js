@@ -1,4 +1,27 @@
 // when clicking the login button, this function executes
 function loginSubmit(){
-    
+    const user = document.getElementById('uname').value;
+    const pass = document.getElementById('pwd').value;
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200){
+            if (this.responseText == "correct"){
+                console.log("correct");
+                vueinst.incpwd = false;
+                window.location.href = "/dashboard";
+            } else {
+                console.log("incorrect");
+                vueinst.incpwd = true;
+                grecaptcha.reset();
+            }
+        }
+    };
+
+    xhttp.open("POST", "/login", true);
+
+    xhttp.setRequestHeader("Content-type", "application/json");
+
+    xhttp.send(JSON.stringify({ uname: user, pwd: pass }));
 }
