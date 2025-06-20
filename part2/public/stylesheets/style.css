@@ -196,10 +196,11 @@ button.login:hover {
 }
 
 div.header {
-    position: relative;
+    position: relative
+    display: flex;
 }
 
 button.logout {
     position: absolute;
-    right: 20px;
+    right: 0;
 }
