@@ -9,14 +9,7 @@ function loginSubmit(){
 
     xhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200){
-            if (this.responseText == "owner"){
-                console.log("owner");
-                window.location.href = "/";
-            } else if (this.responseText == "walker") {
-
-            } else {
-                console.log('false');
-            }
+            
         }
     };
 
