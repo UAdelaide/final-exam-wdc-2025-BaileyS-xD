@@ -3,6 +3,6 @@ function fetchDog(){
     .then((response) => response.json())
     .then((data) => {
         const source = data.message;
-        document.getElementByID('dog').src = source;
+        document.getElementById('dog').src = source;
     });
 }
