@@ -13,8 +13,9 @@ function loginSubmit(){
                 console.log("correct");
 
                 //window.location.href = "/dashboard";
-            } else {
 
+            } else {
+                console.log('false');
             }
         }
     };
