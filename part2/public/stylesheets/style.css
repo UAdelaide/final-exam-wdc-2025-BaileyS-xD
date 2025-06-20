@@ -203,3 +203,7 @@ button.logout {
     position: absolute;
     flex: right;
 }
+
+h1 {
+    width: auto;
+}
