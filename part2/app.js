@@ -42,7 +42,6 @@ app.use(session({
 }));
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/uploads', express.static('uploads'));
 
 app.use('/', indexRouter);
 app.use('/api/walks', walkRoutes);
