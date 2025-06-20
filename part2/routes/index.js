@@ -20,7 +20,11 @@ router.post('/login', function(req, res, next) {
 
           if (rows[0]){
             req.session.user = req.body.uname;
-            if (rows[0].role)
+            if (rows[0].role == 'owner'){
+                res.send('owner');
+            } else {
+                res.send
+            }
           } else {
             res.send("incorrect");
           }
